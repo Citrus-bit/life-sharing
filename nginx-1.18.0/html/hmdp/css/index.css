@@ -6,6 +6,7 @@
     align-items: center;
     height: 50px;
     padding: 0 12px;
+    flex-shrink: 0;
 }
 .city-btn {
     font-size: 13px;
@@ -54,6 +55,7 @@
     justify-content: flex-start;
     padding: 12px 4px 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    flex-shrink: 0;
 }
 .type-box {
     width: 20%;
@@ -92,8 +94,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 6px 8px 60px;
-    height: calc(100% - 50px - 120px);
+    align-content: flex-start;
+    padding: 6px 8px 64px;
+    flex: 1;
     overflow-y: auto;
 }
 .blog-box {
