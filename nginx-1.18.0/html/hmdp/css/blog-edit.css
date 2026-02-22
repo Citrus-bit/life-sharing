@@ -1,115 +1,151 @@
-.header{
-    padding: 15px;
-    line-height: 20px;
+.header {
+    padding: 12px 16px;
+    line-height: 24px;
     display: flex;
     justify-content: space-between;
-    text-align: center;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
 }
-.header-cancel-btn{
+.header-cancel-btn {
     font-size: 14px;
-    font-weight: bold;
+    color: #666;
+    cursor: pointer;
 }
-.header-commit-btn{
+.header-commit-btn {
     color: white;
-    background-color: #F63;
-    padding: 0 12px;
-    border-radius: 15px;
+    background: linear-gradient(135deg, #ff6633, #ff8855);
+    padding: 4px 16px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.header-commit-btn:active {
+    opacity: 0.85;
 }
 .header-title i {
     font-size: 14px;
+    color: #ccc;
+    margin-left: 4px;
 }
 .header-title {
     text-align: center;
-    font-size: 18px;
-    font-family: Hiragino Sans GB,Arial,Helvetica,"\5B8B\4F53",sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #333;
 }
 .upload-box {
-    padding: 15px;
+    padding: 16px;
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
+    background: #fff;
 }
 .upload-btn {
-    width: 70px;
-    height: 125px;
-    line-height: 40px;
-    text-align: center;
+    width: 72px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    border: 1px dashed #3a8ee6;
-    border-radius: 5px;
-    font-size: 30px;
-    color: #82848a;
+    justify-content: center;
+    border: 1.5px dashed #d0d0d0;
+    border-radius: 8px;
+    font-size: 28px;
+    color: #bbb;
     margin-right: 10px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+.upload-btn:active {
+    border-color: #ff6633;
+    color: #ff6633;
 }
 .upload-btn i {
-    margin-top: 35px;
+    margin-bottom: 6px;
 }
 
 .pic-list {
     display: flex;
-    overflow-x: scroll;
-    height: 125px;
+    overflow-x: auto;
+    gap: 8px;
 }
-.pic-box{
-    width: 100px;
-    height: 120px;
-    border-radius: 5px;
-    margin-right: 2px;
-    border: 1px solid #c0ccda;
+.pic-box {
+    width: 80px;
+    height: 100px;
+    border-radius: 8px;
+    flex-shrink: 0;
     position: relative;
+    overflow: hidden;
 }
 .pic-box img {
-    width: 100px;
-    height: 120px;
-    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
 }
 .pic-box i {
     position: absolute;
     z-index: 99;
-    top: 2px;
-    right: 2px;
-    color: gray;
+    top: 4px;
+    right: 4px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    padding: 2px;
+    font-size: 12px;
+    cursor: pointer;
 }
-.blog-title,.blog-content {
-    padding: 5px 15px;
+.blog-title, .blog-content {
+    padding: 8px 16px;
+    background: #fff;
 }
 .blog-title input {
     width: 100%;
-    line-height: 30px;
-    font-size: 14px;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 1px solid #e6e6e8;
+    line-height: 36px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    background: transparent;
 }
 input::placeholder {
-    font-weight: bold;
-    color: #cccccc;
+    font-weight: 500;
+    color: #ccc;
 }
 textarea::placeholder {
-    color: #cccccc;
+    color: #ccc;
 }
-.blog-content textarea{
+.blog-content textarea {
     width: 100%;
-    height: 310px;
+    height: 280px;
     border: 0;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #333;
+    resize: none;
+    background: transparent;
 }
 .blog-shop {
-    color: #82848a;
-    padding: 15px;
+    color: #999;
+    padding: 14px 16px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background: #fff;
 }
 .shop-left {
-    color: #111111;
-    font-size: 14px;
-    font-weight: bold;
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
 }
 .divider {
-    background-color: #f4f4f5;
-    height: 10px;
+    background-color: #f5f5f5;
+    height: 8px;
 }
 .end-gray {
-    background-color: #f4f4f5;
+    background-color: #f5f5f5;
     height: 100%;
 }
 .mask {
@@ -119,56 +155,72 @@ textarea::placeholder {
     z-index: 299;
     top: 0;
     left: 0;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.4);
 }
 .shop-dialog {
-    position: absolute;
+    position: fixed;
     z-index: 999;
     bottom: 0;
-    height: 500px;
-    width: 100%;
+    left: 0;
+    right: 0;
+    height: 65%;
     background-color: #fff;
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
 }
 .search-bar {
     display: flex;
-    padding: 15px;
-    line-height: 30px;
-    justify-content: space-between;
+    padding: 12px 16px;
+    align-items: center;
+    gap: 10px;
 }
 .city-select {
-    font-weight: bold;
+    font-weight: 600;
     font-size: 14px;
-    margin-right: 10px;
+    color: #333;
+    white-space: nowrap;
 }
 .search-input {
-    width: 50%;
-    flex-grow: 1;
-    background-color: #f1f1f1;
-    line-height: 30px;
-    align-items: center;
-    border-radius: 20px;
+    flex: 1;
+    background-color: #f5f5f5;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 17px;
     display: flex;
-    padding: 0 10px ;
+    align-items: center;
+    padding: 0 12px;
+}
+.search-input i {
+    color: #bbb;
+    cursor: pointer;
 }
 .search-input input {
-    margin-left: 10px;
+    margin-left: 8px;
     border: 0;
     width: 100%;
-    background-color: #f1f1f1;
+    background-color: transparent;
+    font-size: 13px;
 }
-input:focus,textarea:focus {
+input:focus, textarea:focus {
     outline: none;
 }
 .shop-list {
-    padding: 15px;
-    overflow-y: scroll;
-    height: 100%;
+    padding: 0 16px;
+    overflow-y: auto;
+    height: calc(100% - 100px);
 }
 .shop-item {
-    border-bottom: 1px solid #eae8e8;
-    padding: 8px 0;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.shop-item:active {
+    background: #fafafa;
 }
 .shop-name {
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
 }

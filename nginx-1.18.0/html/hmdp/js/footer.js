@@ -6,8 +6,8 @@ Vue.component("footBar", {
       <div class="foot-text">首页</div>
     </div>
     <div class="foot-box" :class="{active: activeBtn === 2}" @click="toPage(2)">
-      <div class="foot-view"><i class="el-icon-map-location"></i></div>
-      <div class="foot-text">地图</div>
+      <div class="foot-view"><i class="el-icon-location-outline"></i></div>
+      <div class="foot-text">附近</div>
     </div>
     <div class="foot-box" @click="toPage(0)">
       <img class="add-btn" src="/imgs/add.png" alt="">

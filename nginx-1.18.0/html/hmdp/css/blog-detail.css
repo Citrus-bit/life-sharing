@@ -1,61 +1,65 @@
-
 .header {
     background-color: #fff;
-
-}
-
-.top-bar {
-    height: 60px;
-}
-
-.header {
     width: 100%;
-    height: 6%;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid #ff6633;
-    position: fixed;
-    top: 0;
+    position: relative;
     z-index: 500;
+    padding: 0 4px;
 }
-.shop-avg{
-    opacity: .4;
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff6633, #ff9966);
+}
+.top-bar {
+    height: 50px;
 }
 .header-back-btn {
-    width: 10%;
+    width: 44px;
     color: #ff6633;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
 }
-
+.header-back-btn:active {
+    opacity: 0.6;
+}
 .header-title {
-    width: 80%;
+    flex: 1;
     text-align: center;
-    font-size: 18px;
-    font-family: Hiragino Sans GB, Arial, Helvetica, "\5B8B\4F53", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #333;
 }
-
 .header-share {
-    width: 10%;
+    width: 44px;
     text-align: center;
     font-size: 18px;
-    color: #82848a;
-    font-weight: bold;
-    font-family: Hiragino Sans GB, Arial, Helvetica, "\5B8B\4F53", sans-serif;
-}
-.blog-divider {
-    height: 10px;
-    background-color: #f3f1f1;
+    color: #999;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-.blog-info-box{
+.blog-divider {
+    height: 8px;
+    background-color: #f5f5f5;
+}
+.blog-info-box {
     position: relative;
     overflow: hidden;
-    height: 85%;
+    height: 300px;
     width: 100%;
+    background: #f5f5f5;
 }
-.blog-info-box.indicator{
+.blog-info-box.indicator {
     position: absolute;
     right: 3vw;
     bottom: 3vw;
@@ -64,182 +68,227 @@
     line-height: 10vw;
     border-radius: 5vw;
     text-align: center;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0, 0, 0, .4);
     color: #fff;
     font-size: 14px;
 }
-.swiper-item{
+.swiper-item {
     position: absolute;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
 }
-.basic{
+.swiper-item img {
+    object-fit: cover;
+}
+
+.basic {
     display: flex;
-    justify-content: space-between;
-    padding: 15px 15px 5px 15px;
+    align-items: center;
+    padding: 14px 16px 8px;
+    background: #fff;
 }
 .basic-icon {
     width: 40px;
     height: 40px;
-    padding: 1px;
-    background-color: #fff;
+    flex-shrink: 0;
     border-radius: 50%;
-    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 .basic-icon img {
     border-radius: 50%;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+}
+.basic-info {
+    flex: 1;
+    margin: 0 12px;
+    overflow: hidden;
+}
+.basic-info .name {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+}
+.basic-info .time {
+    display: inline-block;
+    padding: 2px 0;
+    margin-top: 2px;
+    font-size: 12px;
+    color: #bbb;
 }
 
-.shop-basic{
-    margin: auto;
-    width: 80%;
-    border-radius: 5px;
+.logout-btn {
+    height: 28px;
+    line-height: 28px;
+    border-radius: 14px;
+    text-align: center;
+    border: 1px solid #ff6633;
+    color: #ff6633;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    padding: 0 12px;
+}
+.logout-btn:active {
+    background: #ff6633;
+    color: #fff;
+}
+
+.blog-text {
+    padding: 8px 16px 16px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #333;
+    background: #fff;
+}
+.shop-basic {
+    margin: 12px auto;
+    width: 88%;
+    border-radius: 10px;
     display: flex;
-    justify-content: space-between;
-    padding: 15px 15px 5px 15px;
-    box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    padding: 12px 14px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 .shop-icon {
     width: 50px;
     height: 50px;
+    flex-shrink: 0;
+    margin-right: 12px;
 }
 .shop-icon img {
     width: 100%;
     height: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+}
+.shop-avg {
+    color: #999;
+    font-size: 12px;
 }
 
-.zan-box{
-    width: 90%;
-    margin: auto;
-    padding: 20px 0 10px;
+.zan-box {
+    width: 100%;
+    padding: 16px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    background: #fff;
 }
-.zan-list{
-    width: 88%;
+.zan-list {
+    flex: 1;
     display: flex;
+    align-items: center;
+    margin-left: 10px;
 }
-.user-icon-mini{
+.user-icon-mini {
     margin-left: -5px;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    padding: 1px;
-    background-color: #fff;
-    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
 }
 .user-icon-mini img {
     border-radius: 50%;
     width: 100%;
     height: 100%;
-}
-.basic-info {
-    width: 60%;
-}
-.basic-info .name{
-    font-weight: bold;
-    font-size: 12px;
-    color: #446889;
-}
-.basic-info .time{
-    display: inline-block;
-    padding: 0 10px;
-    margin: 5px 0 10px;
-    border-radius: 2px;
-    opacity: .4;
+    object-fit: cover;
 }
 
-.logout-btn{
-    width: 100%;
-    height: 25px;
-    line-height: 25px;
-    border-radius: 12px;
-    text-align: center;
-    border: #ff6633 1px solid;
-    color: #ff6633;
-    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.04);
-}
-.blog-text{
-    width: 90%;
-    padding: 5px 20px;
-}
-.copyright {
-    color: #d1d1d1;
-    margin-top: 20px;
-    text-shadow: 0 1px 1px #fff;
-    text-align: center;
-}
 .blog-comments {
-    padding: 10px;
+    padding: 14px 16px;
+    background: #fff;
 }
 .comments-head {
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
-    font-weight: bold;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
 }
 .comments-head span {
     font-size: 12px;
     font-weight: normal;
-    color: #82848a;
+    color: #999;
 }
 .comment-tags {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 8px;
+    margin-top: 10px;
 }
 .comment-tags div {
-    width: 25%;
-    border: 1px solid #427fc4;
-    border-radius: 5px;
+    background-color: #f0f6ff;
+    border: none;
+    border-radius: 14px;
     text-align: center;
-    color: #427fc4;
-    padding: 5px 10px;
-    margin-top: 7px;
+    color: #3b82c4;
+    padding: 5px 12px;
+    font-size: 12px;
 }
 .comment-list {
-    margin-top: 15px;
+    margin-top: 16px;
 }
 .comment-box {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f5f5f5;
 }
 .comment-icon {
-    width: 55px;
+    width: 40px;
+    flex-shrink: 0;
+    margin-right: 10px;
 }
-.comment-icon img{
-    width: 48px;
-    height: 48px;
+.comment-icon img {
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
+    object-fit: cover;
 }
 .comment-info {
-    width: 80%;
-    flex-grow: 1;
+    flex: 1;
+    overflow: hidden;
 }
 .comment-user {
     font-size: 14px;
+    font-weight: 500;
+    color: #333;
 }
 .comment-user span {
     font-size: 10px;
-    padding: 0 10px;
+    padding: 1px 8px;
     border-radius: 8px;
-    background-color: #f7b253;
+    background: linear-gradient(135deg, #ffc107, #f7b253);
     color: white;
+    margin-left: 4px;
 }
 .comment-images {
     display: flex;
-    width: 100%;
-    overflow-x: scroll;
-    padding: 10px 0;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 8px 0;
 }
 .comment-images img {
-    height: 94px;
-    width: 92px;
-    border-radius: 5px;
-    margin-right: 5px;
+    height: 88px;
+    width: 88px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.copyright {
+    color: #ddd;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 11px;
 }

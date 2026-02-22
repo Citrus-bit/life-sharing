@@ -3,14 +3,16 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-  <title>黑马点评</title>
+  <title>大众点评 - 登录</title>
   <!-- 引入样式 -->
   <link rel="stylesheet" href="./css/element.css">
   <link href="./css/main.css" rel="stylesheet">
   <link href="./css/login.css" rel="stylesheet">
 
   <style type="text/css">
-
+      .login-form .el-input {
+          margin-bottom: 12px;
+      }
   </style>
 </head>
 <body>
@@ -22,18 +24,16 @@
     </div>
     <div class="content">
       <div class="login-form">
-        <div style="display: flex; justify-content: space-between">
-          <el-input style="width: 60%" placeholder="请输入手机号" v-model="form.phone" >
+        <div style="display: flex; justify-content: space-between; gap: 10px; margin-bottom: 12px;">
+          <el-input style="flex: 1" placeholder="请输入手机号" v-model="form.phone" >
           </el-input>
-          <el-button style="width: 38%" @click="sendCode" type="success" :disabled="disabled">{{codeBtnMsg}}</el-button>
+          <el-button style="width: 120px; border-radius: 8px;" @click="sendCode" type="success" :disabled="disabled">{{codeBtnMsg}}</el-button>
         </div>
-
-        <div style="height: 5px"></div>
         <el-input placeholder="请输入验证码" v-model="form.code">
         </el-input>
-        <div style="text-align: center; color: #8c939d;margin: 5px 0">未注册的手机号码验证后自动创建账户</div>
-        <el-button @click="login" style="width: 100%; background-color:#f63; color: #fff;">登录</el-button>
-        <div style="text-align: right; color:#333333; margin: 5px 0"><a href="/login2.html">密码登录</a></div>
+        <div style="text-align: center; color: #bbb; margin: 12px 0; font-size: 12px;">未注册的手机号码验证后自动创建账户</div>
+        <el-button @click="login" style="width: 100%; background: linear-gradient(135deg, #ff6633, #ff8855); color: #fff; border: none; border-radius: 22px; height: 44px; font-size: 16px; font-weight: 500; letter-spacing: 2px;">登录</el-button>
+        <div style="text-align: right; color:#999; margin: 12px 0; font-size: 13px;"><a href="/login2.html" style="color: #ff6633;">密码登录</a></div>
       </div>
       <div class="login-radio">
         <div>
@@ -42,7 +42,7 @@
         </div>
         <div>我已阅读并同意
           <a href="javascript:void(0)">
-          《黑马点评用户服务协议》</a>、
+          《大众点评用户服务协议》</a>、
           <a href="javascript:void(0)">《隐私政策》</a>
           等，接受免除或者限制责任、诉讼管辖约定等粗体标示条款
         </div>
